@@ -53,41 +53,54 @@ const components = new Set([
 
 const componentInstances = new Map();
 
-// Initialize a map to store the file paths for each component
-const componentFiles = new Map();
-
 const processFile = async (filePath) => {
   try {
+    // Read the file content
     const content = await fs.readFile(filePath, "utf8");
+
+    // Regular expression to match the import statement from the component library
     const importRegex =
-      /import\s+{[^}]*}\s+from\s+['"][^'"]*\/component-library['"]/g;
-    const isImported = importRegex.test(content);
+      /import\s+{([^}]*)}\s+from\s+['"][^'"]*\/component-library['"]/g;
 
-    console.log(`Processing file ${filePath}`);
-    console.log(`Is imported from component library: ${isImported}`);
+    // Execute the regular expression to get the import statement
+    const importMatch = importRegex.exec(content);
 
-    if (isImported) {
+    // If the file imports anything from the component library
+    if (importMatch) {
+      // Parse the import statement to get a list of imported components
+      const importedComponents = importMatch[1]
+        .split(",")
+        .map((name) => name.trim());
+
+      console.log(`Processing file ${filePath}`);
+      console.log(`Imported components: ${importedComponents}`);
+
+      // Regular expression to match the JSX components used in the file
       const matches = content.match(/<([A-Z]\w*)(?=\s|\/|>)/g);
 
       console.log(`Matches: ${matches}`);
 
+      // If any JSX components are used in the file
       if (matches) {
+        // For each matched component
         matches.forEach((match) => {
+          // Get the component name
           const componentName = match.substring(1);
-          if (components.has(componentName)) {
-            const count = componentInstances.get(componentName) || 0;
-            componentInstances.set(componentName, count + 1);
 
-            // Get the current list of file paths for the component
-            const filePaths = componentFiles.get(componentName) || [];
-            // Add the current file path to the list
-            filePaths.push(filePath);
-            // Update the list of file paths for the component
-            componentFiles.set(componentName, filePaths);
+          // If the component is in the list of components to count
+          // and it's included in the import from the component library
+          if (
+            components.has(componentName) &&
+            importedComponents.includes(componentName)
+          ) {
+            // Get the current count of the component
+            const count = componentInstances.get(componentName) || 0;
+
+            // Increment the count of the component
+            componentInstances.set(componentName, count + 1);
 
             console.log(`Matched component: ${componentName}`);
             console.log(`Current count: ${count + 1}`);
-            console.log(`File paths: ${filePaths}`);
           } else {
             console.log(
               `Component not in list or not imported from component library: ${componentName}`
@@ -113,14 +126,11 @@ glob(
     await Promise.all(files.map(processFile));
 
     console.log("Component Adoption Metrics:");
-    let csvContent = "Component,Instances,File Paths\n";
+    let csvContent = "Component,Instances\n";
     components.forEach((componentName) => {
       const instanceCount = componentInstances.get(componentName) || 0;
-      const filePaths = componentFiles.get(componentName) || [];
       console.log(`${componentName}: ${instanceCount}`);
-      csvContent += `${componentName},${instanceCount},"${filePaths.join(
-        ", "
-      )}"\n`;
+      csvContent += `${componentName},${instanceCount}\n`;
     });
 
     // Write the CSV content to a file
