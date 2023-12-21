@@ -2,16 +2,32 @@
 
 A node.js script to generate a CSV of component adoption metrics.
 
-### Get started
+## Get started
 
-1. Drop this script in the root folder of the [MetaMask extension](https://github.com/MetaMask/metamask-extension)
+- [Extension](#extension)
+- [Mobile](#mobile)
+
+### Extension
+
+1. Drop the `extension-adoption-metrics-script.js` script in the root folder of the [MetaMask extension](https://github.com/MetaMask/metamask-extension)
 2. Run
 
 ```
-node ./component-tracking-script.js
+node ./extension-adoption-metrics-script.js
 ```
 
-3. A file called `component-metrics.csv` should appear in the root folder of the extension if there are no errors
+3. A file called `extension-component-adoption-metrics.csv` should appear in the root folder of the extension if there are no errors
+
+### Mobile
+
+1. Drop the `mobile-adoption-metrics-script.js` script in the root folder of the [MetaMask Mobile](https://github.com/MetaMask/metamask-mobile)
+2. Run
+
+```
+node ./mobile-adoption-metrics-script.js
+```
+
+3. A file called `mobile-component-adoption-metrics.csv` should appear in the root folder of the mobile app if there are no errors
 
 ### Requirements
 
