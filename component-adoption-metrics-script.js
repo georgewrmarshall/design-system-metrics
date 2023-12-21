@@ -135,7 +135,7 @@ glob(
 
     // Write the CSV content to a file
     try {
-      await fs.writeFile("component-metrics.csv", csvContent);
+      await fs.writeFile("component-adoption-metrics.csv", csvContent);
       console.log("Component metrics written to component-metrics.csv");
     } catch (err) {
       console.error("Error writing to file:", err);
