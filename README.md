@@ -1,6 +1,17 @@
 # component-tracking-script
 
-A node.js script to track component adoption metrics
+A node.js script to generate a CSV of component adoption metrics.
+
+### Get started
+
+1. Drop this script in the root folder of the [MetaMask extension](https://github.com/MetaMask/metamask-extension)
+2. Run
+
+```
+node ./component-tracking-script.js
+```
+
+3. A file called `component-metrics.csv` should appear in the root folder of the extension if there are no errors
 
 ### Requirements
 
