@@ -73,15 +73,21 @@ const processFile = async (filePath) => {
   try {
     const content = await fs.readFile(filePath, "utf8");
     const importRegex =
-      /import\s+(.*?)\s+from\s+['"][^'"]*component-library[^'"]*['"]/gs;
+      /import\s+(?:([^,\s]+),?\s*{([^}]+)}|([^\s]+))\s+from\s+['"][^'"]*component-library[^'"]*['"]/gs;
     let importMatch;
     const importedComponents = [];
 
     // Match all import statements from the component library
     while ((importMatch = importRegex.exec(content)) !== null) {
-      // Parse each import statement to get the default import
-      const defaultImport = importMatch[1].trim();
-      importedComponents.push(defaultImport);
+      // Parse each import statement to get the imported components
+      const imports = importMatch[1]
+        ? importMatch[1]
+            .split(",")
+            .map((importName) => importName.trim().split(" ")[0])
+        : [importMatch[2]];
+      imports.forEach((importName) => {
+        importedComponents.push(importName);
+      });
     }
 
     console.log(`Processing file ${filePath}`);
@@ -103,6 +109,10 @@ const processFile = async (filePath) => {
           const count = componentInstances.get(componentName) || 0;
           componentInstances.set(componentName, count + 1);
 
+          const files = componentFiles.get(componentName) || [];
+          files.push(filePath);
+          componentFiles.set(componentName, files);
+
           console.log(`Matched component: ${componentName}`);
           console.log(`Current count: ${count + 1}`);
         }
@@ -114,7 +124,7 @@ const processFile = async (filePath) => {
 };
 
 glob(
-  `${rootFolder}/components/**/*.{js,tsx}`,
+  `app/components/UI/AccountRightButton/index.tsx`,
   {
     ignore: [
       `${ignoreFolder}/**`,
