@@ -73,7 +73,7 @@ const processFile = async (filePath) => {
   try {
     const content = await fs.readFile(filePath, "utf8");
     const importRegex =
-      /import\s+(?:([^,\s]+),?\s*{([^}]+)}|([^\s]+))\s+from\s+['"][^'"]*component-library[^'"]*['"]/gs;
+      /import\s+((?:[^,\s]+)(?:,\s*{[^}]+})?|[^,\s]+,)\s+from\s+['"][^'"]*component-library[^'"]*['"]/gs;
     let importMatch;
     const importedComponents = [];
 
@@ -124,7 +124,7 @@ const processFile = async (filePath) => {
 };
 
 glob(
-  `app/components/UI/AccountRightButton/index.tsx`,
+  `${rootFolder}/components/**/*.{js,tsx}`,
   {
     ignore: [
       `${ignoreFolder}/**`,
