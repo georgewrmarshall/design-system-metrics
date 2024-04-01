@@ -40,6 +40,7 @@ const components = new Set([
   "ModalFocus",
   "Modal",
   "ModalBody",
+  "ModalFooter", // Added as it was missing in your list
   "BannerBase",
   "BannerAlert",
   "BannerTip",
