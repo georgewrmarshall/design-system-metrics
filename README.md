@@ -1,4 +1,4 @@
-# component-tracking-script
+# component-tracking-scripts
 
 A node.js script to generate a CSV of component adoption metrics.
 
