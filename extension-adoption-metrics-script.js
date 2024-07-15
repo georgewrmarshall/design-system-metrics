@@ -48,6 +48,7 @@ const components = new Set([
   "Tag",
   "TagUrl",
   "Text",
+  "Textarea",
   "TextField",
   "TextFieldSearch",
 ]);
