@@ -57,10 +57,17 @@ const processFile = async (filePath, componentsSet, importedComponentsSet) => {
     traverse(ast, {
       ImportDeclaration({ node }) {
         const importPath = node.source.value;
+        console.log(`Import path detected: ${importPath}`);
         if (importPath.includes("/component-library")) {
           node.specifiers.forEach((specifier) => {
-            if (specifier.type === "ImportSpecifier") {
-              importedComponentsSet.add(specifier.imported.name);
+            if (specifier.type === "ImportDefaultSpecifier") {
+              importedComponentsSet.add(specifier.local.name);
+              console.log(
+                `Default imported component: ${specifier.local.name}`
+              );
+            } else if (specifier.type === "ImportSpecifier") {
+              importedComponentsSet.add(specifier.local.name);
+              console.log(`Named imported component: ${specifier.local.name}`);
             }
           });
         }
@@ -90,6 +97,8 @@ const processFile = async (filePath, componentsSet, importedComponentsSet) => {
             componentName = current.name;
           }
 
+          console.log(`JSX component detected: ${componentName}`);
+
           if (
             componentsSet.has(componentName) &&
             importedComponentsSet.has(componentName)
@@ -100,6 +109,10 @@ const processFile = async (filePath, componentsSet, importedComponentsSet) => {
             const files = componentFiles.get(componentName) || [];
             files.push(filePath);
             componentFiles.set(componentName, files);
+
+            console.log(
+              `Matched JSX component: ${componentName}, Count: ${count + 1}`
+            );
           }
         }
       },
