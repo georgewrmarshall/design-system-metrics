@@ -54,7 +54,7 @@
     "mobile": {
       "rootFolder": "app",
       "ignoreFolders": ["app/component-library"],
-      "filePattern": "app/components/**/*.{js,tsx}",
+      "filePattern": "app/components/**/*.{js,jsx,ts,tsx}",
       "outputFile": "mobile-component-adoption-metrics.csv",
       "components": [
         "Accordion",
