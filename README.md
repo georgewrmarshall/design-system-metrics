@@ -1,6 +1,6 @@
-# **Design System Metrics**
+# **@georgewrmarshall/design-system-metrics**
 
-A Node.js-based CLI tool to generate a CSV of component adoption metrics across multiple MetaMask codebases. This tool supports both the MetaMask Extension and MetaMask Mobile repositories and tracks component usage based on a provided configuration.
+A CLI tool to audit design system component usage across multiple MetaMask codebases
 
 ## **Getting Started**
 
@@ -19,12 +19,12 @@ A Node.js-based CLI tool to generate a CSV of component adoption metrics across 
 git clone https://github.com/MetaMask/metamask-extension.git
 ```
 
-2. **Run the CLI tool from the `design-system-metrics` package:**
+2. **Run the CLI tool from the `@georgewrmarshall/design-system-metrics` package:**
 
-Navigate to the `design-system-metrics` package directory:
+Navigate to the `@georgewrmarshall/design-system-metrics` package directory:
 
 ```bash
-cd /path/to/design-system-metrics
+cd /path/to/@georgewrmarshall/design-system-metrics
 ```
 
 3. **Run the CLI tool for the MetaMask Extension:**
@@ -45,12 +45,12 @@ yarn node index.js --project extension
 git clone https://github.com/MetaMask/metamask-mobile.git
 ```
 
-2. **Run the CLI tool from the `design-system-metrics` package:**
+2. **Run the CLI tool from the `@georgewrmarshall/design-system-metrics` package:**
 
-Navigate to the `design-system-metrics` package directory:
+Navigate to the `@georgewrmarshall/design-system-metrics` package directory:
 
 ```bash
-cd /path/to/design-system-metrics
+cd /path/to/@georgewrmarshall/design-system-metrics
 ```
 
 3. **Run the CLI tool for the MetaMask Mobile project:**
