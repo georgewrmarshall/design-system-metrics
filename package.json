@@ -1,6 +1,6 @@
 {
   "name": "@georgewrmarshall/design-system-metrics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI tool to audit design system component usage across multiple MetaMask codebases",
   "main": "index.js",
   "packageManager": "yarn@4.3.1",
