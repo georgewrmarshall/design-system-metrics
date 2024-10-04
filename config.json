@@ -47,6 +47,7 @@
         "Tag",
         "TagUrl",
         "Text",
+        "Textarea",
         "TextField",
         "TextFieldSearch"
       ]
