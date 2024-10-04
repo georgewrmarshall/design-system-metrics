@@ -1,0 +1,30 @@
+{
+  "name": "design-system-metrics",
+  "version": "1.0.0",
+  "description": "A CLI tool to audit design system component usage across multiple codebases",
+  "main": "index.js",
+  "packageManager": "yarn@4.3.1",
+  "bin": "./index.js",
+  "scripts": {
+    "start": "node index.js --project extension"
+  },
+  "keywords": [
+    "cli",
+    "audit",
+    "components",
+    "ast",
+    "babel"
+  ],
+  "author": "George Marshall",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/parser": "^7.25.7",
+    "@babel/traverse": "^7.25.7",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
