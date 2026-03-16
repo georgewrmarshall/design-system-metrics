@@ -1,0 +1,43 @@
+{
+  "project": "extension",
+  "date": "2026-02-21",
+  "mmdsInstances": 1436,
+  "deprecatedInstances": 3852,
+  "mmdsUsageTotal": 1418,
+  "totalInstances": 5270,
+  "migrationPercentage": "26.91",
+  "componentsTracked": 15,
+  "mmdsComponentsAvailable": 25,
+  "noReplacementComponents": 24,
+  "totalNoReplacementInstances": 674,
+  "mmdsComponentsList": [
+    "AvatarAccount",
+    "AvatarBase",
+    "AvatarFavicon",
+    "AvatarGroup",
+    "AvatarIcon",
+    "AvatarNetwork",
+    "AvatarToken",
+    "BadgeCount",
+    "BadgeIcon",
+    "BadgeNetwork",
+    "BadgeStatus",
+    "BadgeWrapper",
+    "Blockies",
+    "Box",
+    "Button",
+    "ButtonBase",
+    "ButtonHero",
+    "ButtonIcon",
+    "Checkbox",
+    "Icon",
+    "Input",
+    "Jazzicon",
+    "Maskicon",
+    "Text",
+    "TextButton"
+  ],
+  "newComponents": [
+    "Input"
+  ]
+}

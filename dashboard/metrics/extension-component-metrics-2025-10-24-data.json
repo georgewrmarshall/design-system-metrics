@@ -1,0 +1,183 @@
+{
+  "project": "extension",
+  "date": "2025-10-24",
+  "generatedAt": "2026-03-02T19:39:59.316Z",
+  "mmdsComponentsAvailable": 24,
+  "summary": {
+    "totalComponents": 15,
+    "mmdsInstances": 276,
+    "deprecatedInstances": 4064,
+    "totalInstances": 4321,
+    "migrationPercentage": "5.95",
+    "fullyMigrated": 0,
+    "notStarted": 5,
+    "inProgress": 12
+  },
+  "components": [
+    {
+      "name": "Box",
+      "mmdsInstances": 101,
+      "deprecatedInstances": 1669,
+      "totalInstances": 1770,
+      "replacement": "Box",
+      "migrationPercentage": "5.71"
+    },
+    {
+      "name": "Text",
+      "mmdsInstances": 80,
+      "deprecatedInstances": 1350,
+      "totalInstances": 1430,
+      "replacement": "Text",
+      "migrationPercentage": "5.59"
+    },
+    {
+      "name": "Icon",
+      "mmdsInstances": 22,
+      "deprecatedInstances": 231,
+      "totalInstances": 253,
+      "replacement": "Icon",
+      "migrationPercentage": "8.70"
+    },
+    {
+      "name": "Button",
+      "mmdsInstances": 0,
+      "deprecatedInstances": 234,
+      "totalInstances": 234,
+      "replacement": "Button",
+      "migrationPercentage": "0.00"
+    },
+    {
+      "name": "ButtonIcon",
+      "mmdsInstances": 13,
+      "deprecatedInstances": 165,
+      "totalInstances": 178,
+      "replacement": "ButtonIcon",
+      "migrationPercentage": "7.30"
+    },
+    {
+      "name": "ButtonLink",
+      "mmdsInstances": 3,
+      "deprecatedInstances": 121,
+      "totalInstances": 124,
+      "replacement": "TextButton",
+      "migrationPercentage": "2.42"
+    },
+    {
+      "name": "AvatarNetwork",
+      "mmdsInstances": 4,
+      "deprecatedInstances": 62,
+      "totalInstances": 66,
+      "replacement": "AvatarNetwork",
+      "migrationPercentage": "6.06"
+    },
+    {
+      "name": "ButtonPrimary",
+      "mmdsInstances": 0,
+      "deprecatedInstances": 47,
+      "totalInstances": 47,
+      "replacement": "Button",
+      "migrationPercentage": "0.00"
+    },
+    {
+      "name": "BadgeWrapper",
+      "mmdsInstances": 5,
+      "deprecatedInstances": 31,
+      "totalInstances": 36,
+      "replacement": "BadgeWrapper",
+      "migrationPercentage": "13.89"
+    },
+    {
+      "name": "Checkbox",
+      "mmdsInstances": 1,
+      "deprecatedInstances": 34,
+      "totalInstances": 35,
+      "replacement": "Checkbox",
+      "migrationPercentage": "2.86"
+    },
+    {
+      "name": "AvatarToken",
+      "mmdsInstances": 5,
+      "deprecatedInstances": 27,
+      "totalInstances": 32,
+      "replacement": "AvatarToken",
+      "migrationPercentage": "15.63"
+    },
+    {
+      "name": "AvatarIcon",
+      "mmdsInstances": 1,
+      "deprecatedInstances": 24,
+      "totalInstances": 25,
+      "replacement": "AvatarIcon",
+      "migrationPercentage": "4.00"
+    },
+    {
+      "name": "ButtonSecondary",
+      "mmdsInstances": 0,
+      "deprecatedInstances": 22,
+      "totalInstances": 22,
+      "replacement": "Button",
+      "migrationPercentage": "0.00"
+    },
+    {
+      "name": "AvatarFavicon",
+      "mmdsInstances": 1,
+      "deprecatedInstances": 21,
+      "totalInstances": 22,
+      "replacement": "AvatarFavicon",
+      "migrationPercentage": "4.55"
+    },
+    {
+      "name": "ButtonBase",
+      "mmdsInstances": 4,
+      "deprecatedInstances": 17,
+      "totalInstances": 21,
+      "replacement": "ButtonBase",
+      "migrationPercentage": "19.05"
+    },
+    {
+      "name": "AvatarBase",
+      "mmdsInstances": 0,
+      "deprecatedInstances": 8,
+      "totalInstances": 8,
+      "replacement": "AvatarBase",
+      "migrationPercentage": "0.00"
+    },
+    {
+      "name": "Input",
+      "mmdsInstances": 0,
+      "deprecatedInstances": 1,
+      "totalInstances": 1,
+      "replacement": "Input",
+      "migrationPercentage": "0.00"
+    }
+  ],
+  "mmdsComponentsList": [
+    "AvatarAccount",
+    "AvatarBase",
+    "AvatarFavicon",
+    "AvatarGroup",
+    "AvatarIcon",
+    "AvatarNetwork",
+    "AvatarToken",
+    "BadgeCount",
+    "BadgeIcon",
+    "BadgeNetwork",
+    "BadgeStatus",
+    "BadgeWrapper",
+    "Blockies",
+    "Box",
+    "Button",
+    "ButtonBase",
+    "ButtonHero",
+    "ButtonIcon",
+    "Checkbox",
+    "Icon",
+    "Jazzicon",
+    "Maskicon",
+    "Text",
+    "TextButton"
+  ],
+  "newComponents": [
+    "ButtonHero"
+  ]
+}
